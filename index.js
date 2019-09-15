@@ -48,15 +48,19 @@ function criaVetor(tam, tipo) {
 	//------------------------------------------------------------------------------------------
 
 	function selecaoDireta(vet) {
-		var i, j, menor;
+		var i, j, menor, pos, aux;
 		for (i = 0; i < vet.length - 1; i++) {
 			menor = vet[i];
 			for (j = i + 1; j < vet.length; j++) {
-				if (vet[j] < menor) {
-					menor = vet[j];
+				if (vet[j] <= menor) {
+                    menor = vet[j];
+                    pos = j;
 				}
-			}
-			vet[i] = menor;
+            }
+            aux = vet[i]
+            vet[i] = menor;
+            vet[pos] = aux;
+            
 		}
 	}
 	//------------------------------------------------------------------------------------------
